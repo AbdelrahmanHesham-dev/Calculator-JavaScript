@@ -1,0 +1,124 @@
+/* Reset basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  background: rgba(249, 168, 37, 0.671);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+#calculator_container {
+  background-color: #ffffff;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  transform: scale(1);
+  animation: popup 0.6s ease-out;
+}
+
+#calculator_area {
+  height: 70px;
+  width: 95%;
+  margin: 5px auto 15px;
+  background-color: #f9a825b4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  overflow: auto;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.calculator_row {
+  display: flex;
+}
+
+button {
+  flex: 1;
+  height: 70px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button styles */
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  background-color: #f9a825;
+  color: #ffffff;
+}
+
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover {
+  background-color: #d78818;
+}
+
+/* clear and delete */
+button:nth-child(1),
+button:nth-child(17) {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+button:nth-child(1):hover,
+button:nth-child(17):hover {
+  background-color: #bdbdbd;
+}
+
+button {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button:active {
+  background-color: #cccccc;
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 360px) {
+  #calculator_container {
+    width: 280px;
+  }
+
+  button {
+    height: 60px;
+    font-size: 1rem;
+  }
+}
